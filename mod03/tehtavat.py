@@ -49,7 +49,10 @@ a = float(input("Anna leiviskät:\n"))
 b = float(input("Anna naulat:\n"))
 c = float(input("Anna luodit:\n"))
 
-print(f"Massa nykymittojen mukaan:\n {(a * 8.5) + (b * 0.425) + (c * 0.0133)} kilogrammaa ja {(a * 8500) + (b * 425) + (c * 13.3)} grammaa")
+kilogrammaa = (a * 8.5) + (b * 0.425) + (c * 0.0133)
+grammaa = (a * 8500) + (b * 425) + (c * 13.3)
+
+print(f"Massa nykymittojen mukaan:\n{int(kilogrammaa)} kilogrammaa ja {grammaa} grammaa")
 
 # tehtävä 6
 
