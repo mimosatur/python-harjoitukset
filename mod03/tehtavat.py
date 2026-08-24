@@ -30,3 +30,8 @@ print(f"Suorakulmion piiri on: {p:.2f} ja pinta-ala {A:.2f}")
 print(f"Suorakulmion piiri on: {p:.2f} ja pinta-ala {(a*b):.2f}")
 
 # tehtävä 4
+
+kokonaisluku = float(input("Anna kokonaisluku: "))
+kokonaisluku2 = float(input("Anna kokonaisluku2: "))
+kokonaisluku3 = float(input("Anna kokonaisluku3: "))
+
