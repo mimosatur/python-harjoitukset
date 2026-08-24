@@ -31,7 +31,31 @@ print(f"Suorakulmion piiri on: {p:.2f} ja pinta-ala {(a*b):.2f}")
 
 # tehtävä 4
 
-kokonaisluku = float(input("Anna kokonaisluku: "))
-kokonaisluku2 = float(input("Anna kokonaisluku2: "))
-kokonaisluku3 = float(input("Anna kokonaisluku3: "))
+a = float(input("Anna ensimmäinen luku: "))
+b = float(input("Anna toinen luku: "))
+c = float(input("Anna kolmas luku: "))
 
+summa = a + b + c
+tulo = a * b * c
+keskiarvo = (a + b + c) / 3
+
+print(f"Lukujen summa: {summa}")
+print(f"Lukujen tulo: {tulo}")
+print(f"Lukujen keskiarvo: {keskiarvo}")
+
+# tehtävä 5
+
+a = float(input("Anna leiviskät:\n"))
+b = float(input("Anna naulat:\n"))
+c = float(input("Anna luodit:\n"))
+
+
+
+# tehtävä 6
+
+luku = random.randint(0,9)
+luku2 = random.randint(0,9)
+luku3 = random.randint(0,9)
+
+print(f"{luku} {luku2} {luku3}")
+print(f"{random.randint(1,6)} {random.randint(1,6)} {random.randint(1,6)} {random.randint(1,6)}")
