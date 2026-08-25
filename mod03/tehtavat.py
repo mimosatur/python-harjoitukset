@@ -45,14 +45,21 @@ print(f"Lukujen keskiarvo: {keskiarvo}")
 
 # tehtävä 5
 
-a = float(input("Anna leiviskät:\n"))
-b = float(input("Anna naulat:\n"))
-c = float(input("Anna luodit:\n"))
+leiviska_lkm = float(input("Anna leivisköjen määrä:\n"))
+naula_lkm = float(input("Anna naulojen määrä:\n"))
+luoti_lkm = float(input("Anna luotien määrä:\n"))
 
-kilogrammaa = (a * 8.5) + (b * 0.425) + (c * 0.0133)
-grammaa = (a * 8500) + (b * 425) + (c * 13.3)
+# lasketaan leiviskät mukaan nauloihin
+naula_lkm = leiviska_lkm * 20 + naula_lkm
+# lasketaan naulat mukaan luoteihin
+luoti_lkm = naula_lkm * 32 + luoti_lkm
 
-print(f"Massa nykymittojen mukaan:\n{int(kilogrammaa)} kilogrammaa ja {grammaa} grammaa")
+# välitarkastus, että kaikki toimii
+# print(f"Koko massa luoteina: {luoti_lkm}")
+
+massa_g = luoti_lkm * 13.3
+
+print(f"Massa nykymittojen mukaan:\n{int(massa_g // 1000)} kilogrammaa {massa_g % 1000:.2f} grammaa")
 
 # tehtävä 6
 
