@@ -1,2 +1,2 @@
-##Pelin nimi
+## Jalokivi
 **Mimosa Turunen
