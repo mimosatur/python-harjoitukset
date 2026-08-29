@@ -1,5 +1,5 @@
 # Tehtävä 1
-'''
+
 kuhanpituus = float(input("Anna kuhan pituus senttimetreinä: "))
 if kuhanpituus < 37:
     print(f"Kuha on {37 - kuhanpituus} cm alamittainen. Laske se takaisin järveen.")
@@ -37,11 +37,10 @@ if sukupuoli == "mies" and 134 <= hemoglobiini < 195:
     print("Hemoglobiini on normaali")
 if sukupuoli == "mies" and hemoglobiini >= 195:
     print("Hemoglobiini on korkea")
-'''
 
 # tehtävä 4
-# keksen
 
 vuosiluku = int(input("Anna vuosiluku: "))
-if vuosiluku / 4 == int:
-    print(f"Vuosi {vuosiluku} on karkausvuosi")
+
+if vuosiluku % 4 == 0 and (vuosiluku % 100 != 0 or vuosiluku % 400 == 0):
+    print(f"{vuosiluku} on karkausvuosi")
