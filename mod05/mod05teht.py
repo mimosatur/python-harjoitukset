@@ -16,4 +16,7 @@ tuuma = float(input("Anna tuumat: "))
 
 senttimetri = tuuma * 2.54
 
-print(f"{tuuma} tuumaa on senttimetreinä {senttimetri} cm")
+while senttimetri >= 0:
+    print(f"{tuuma} tuumaa on senttimetreinä {senttimetri} cm")
+    if senttimetri < 0:
+        print("loppu")
