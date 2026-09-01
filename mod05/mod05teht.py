@@ -1,5 +1,5 @@
 import random
-
+'''
 # Tehtävä 1
 
 luku = 1
@@ -24,18 +24,21 @@ while tuuma >= 0:
     senttimetri = tuuma * 2.54
     if tuuma < 0:
         tuuma -= 1
-
+'''
 
 # Tehtävä 3
 
 luku = float(input("Anna luku: "))
 
+pienin_luku = None
+suurin_luku = None
+
 while luku != (""):
     luku = float(input("Anna luku: "))
     if luku == (""):
-        luku += 1
+        luku = 
 
-
+'''
 # Tehtävä 4
 
 luku = random.randint(1,10)
@@ -74,6 +77,6 @@ while arvaus1 != oikea_käyttäjätunnus and arvaus2 != oikea_salasana:
         print("Pääsy evätty")
 
 print("Tervetuloa!")
-
+'''
 
 
