@@ -1,4 +1,4 @@
 ## Jalokivi
 **Mimosa Turunen
 
-tehtävä 2 tuotta vaikeuksia
+tehtävä 2 tuottaa vaikeuksia
