@@ -54,12 +54,26 @@ while arvaus < luku:
 
 # Tehtävä 5
 
-oikea_käyttäjätunnus = "python"
-oikea_salasana = "rules"
 
 arvaus1 = str(input("Anna käyttäjätunnus: "))
 arvaus2 = str(input("Anna salasana: "))
 
+oikea_käyttäjätunnus = "python"
+oikea_salasana = "rules"
+
 while arvaus1 != oikea_käyttäjätunnus and arvaus2 != oikea_salasana:
     arvaus1 = str(input("Anna käyttäjätunnus uudelleen: "))
-    arvaus2 = str(input("Anna käyttäjätunnus uudelleen: "))
+    arvaus2 = str(input("Anna salasana uudelleen: "))
+    if arvaus1 != oikea_käyttäjätunnus or arvaus2 != oikea_salasana:
+        arvaus1 = str(input("Anna käyttäjätunnus uudelleen: "))
+        arvaus2 = str(input("Anna salasana uudelleen: "))
+    elif arvaus1 == oikea_käyttäjätunnus and arvaus2 == oikea_salasana:
+        arvaus1 = str(input("Anna käyttäjätunnus uudelleen: "))
+        arvaus2 = str(input("Anna salasana uudelleen: "))
+    elif arvaus1 != oikea_käyttäjätunnus and arvaus2 != oikea_salasana < 5:
+        print("Pääsy evätty")
+
+print("Tervetuloa!")
+
+
+
