@@ -30,9 +30,9 @@ while tuuma >= 0:
 
 luku = float(input("Anna luku: "))
 
-while luku != "":
+while luku != (""):
     luku = float(input("Anna luku: "))
-    if luku == "":
+    if luku == (""):
         luku += 1
 
 
