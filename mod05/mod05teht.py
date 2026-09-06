@@ -24,19 +24,24 @@ while tuuma >= 0:
     senttimetri = tuuma * 2.54
     if tuuma < 0:
         tuuma -= 1
-'''
+
 
 # Tehtävä 3
 
-luku = float(input("Anna luku: "))
 
-pienin_luku = None
-suurin_luku = None
+pienin_luku = 0
+suurin_luku = 0
 
-while luku != (""):
-    luku = float(input("Anna luku: "))
-    if luku == (""):
-        luku = 
+while True:
+    luku = input("Anna luku: ")
+    pienin_luku = float(luku) + 1
+    suurin_luku = float(luku) + 1
+    if luku == "":
+        break
+else:
+        print(f"Pienin luku on {pienin_luku} ja suurin luku on {suurin_luku}")
+
+'''       
 
 '''
 # Tehtävä 4
@@ -53,30 +58,33 @@ while arvaus < luku:
         arvaus = int(input("Arvaa uudestaan: "))
     elif arvaus == luku:
         print("Oikein")
-
+'''
 
 # Tehtävä 5
 
 
-arvaus1 = str(input("Anna käyttäjätunnus: "))
-arvaus2 = str(input("Anna salasana: "))
+arvaus1 = input("Anna käyttäjätunnus: ")
+arvaus2 = input("Anna salasana: ")
+
+tehdyt1 = tehdyt2 = 0
 
 oikea_käyttäjätunnus = "python"
 oikea_salasana = "rules"
 
 while arvaus1 != oikea_käyttäjätunnus and arvaus2 != oikea_salasana:
-    arvaus1 = str(input("Anna käyttäjätunnus uudelleen: "))
-    arvaus2 = str(input("Anna salasana uudelleen: "))
-    if arvaus1 != oikea_käyttäjätunnus or arvaus2 != oikea_salasana:
-        arvaus1 = str(input("Anna käyttäjätunnus uudelleen: "))
-        arvaus2 = str(input("Anna salasana uudelleen: "))
-    elif arvaus1 == oikea_käyttäjätunnus and arvaus2 == oikea_salasana:
-        arvaus1 = str(input("Anna käyttäjätunnus uudelleen: "))
-        arvaus2 = str(input("Anna salasana uudelleen: "))
-    elif arvaus1 != oikea_käyttäjätunnus and arvaus2 != oikea_salasana < 5:
+    arvaus1 = input("Anna käyttäjätunnus uudelleen: ")
+    arvaus2 = input("Anna salasana uudelleen: ")
+    tehdyt1 = arvaus1 + 1
+    tehdyt2 = arvaus2 + 1
+    while arvaus1 != oikea_käyttäjätunnus or arvaus2 != oikea_salasana:
+        arvaus1 = input("Anna käyttäjätunnus uudelleen: ")
+        arvaus2 = input("Anna salasana uudelleen: ")
+        tehdyt1 = arvaus1 + 1
+        tehdyt2 = arvaus2 + 1
+    if arvaus1 == oikea_käyttäjätunnus and arvaus2 == oikea_salasana:
+        print("Tervetuloa!")
+    elif tehdyt1 > 5 and tehdyt2 > 5:
         print("Pääsy evätty")
-
-print("Tervetuloa!")
-'''
-
+        arvaus1 = arvaus2 = False
+        break
 
