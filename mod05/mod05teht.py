@@ -1,5 +1,5 @@
 import random
-'''
+
 # Tehtävä 1
 
 luku = 1
@@ -28,22 +28,31 @@ while tuuma >= 0:
 
 # Tehtävä 3
 
+luku = input("Anna luku: ")
 
-pienin_luku = 0
-suurin_luku = 0
+if luku != "":
+    luku = int(luku)
+    pienin_luku = luku
+    suurin_luku = luku
 
-while True:
-    luku = input("Anna luku: ")
-    pienin_luku = float(luku) + 1
-    suurin_luku = float(luku) + 1
-    if luku == "":
-        break
-else:
-        print(f"Pienin luku on {pienin_luku} ja suurin luku on {suurin_luku}")
+    while True:
+        luku = input("Anna luku: ")
 
-'''       
+        if luku == "":
+            break
 
-'''
+        luku = int(luku)
+
+        if luku < pienin_luku:
+         pienin_luku = luku
+        if luku > suurin_luku:
+         suurin_luku = luku
+
+    print(f"Pienin luku on {pienin_luku} ja suurin luku on {suurin_luku}")
+
+      
+
+
 # Tehtävä 4
 
 luku = random.randint(1,10)
@@ -58,33 +67,23 @@ while arvaus < luku:
         arvaus = int(input("Arvaa uudestaan: "))
     elif arvaus == luku:
         print("Oikein")
-'''
+
 
 # Tehtävä 5
 
+max_yritykset = 5
+yritykset = 0
 
-arvaus1 = input("Anna käyttäjätunnus: ")
-arvaus2 = input("Anna salasana: ")
 
-tehdyt1 = tehdyt2 = 0
-
-oikea_käyttäjätunnus = "python"
-oikea_salasana = "rules"
-
-while arvaus1 != oikea_käyttäjätunnus and arvaus2 != oikea_salasana:
-    arvaus1 = input("Anna käyttäjätunnus uudelleen: ")
-    arvaus2 = input("Anna salasana uudelleen: ")
-    tehdyt1 = arvaus1 + 1
-    tehdyt2 = arvaus2 + 1
-    while arvaus1 != oikea_käyttäjätunnus or arvaus2 != oikea_salasana:
-        arvaus1 = input("Anna käyttäjätunnus uudelleen: ")
-        arvaus2 = input("Anna salasana uudelleen: ")
-        tehdyt1 = arvaus1 + 1
-        tehdyt2 = arvaus2 + 1
-    if arvaus1 == oikea_käyttäjätunnus and arvaus2 == oikea_salasana:
+while True:
+    arvaus1 = input("Anna käyttäjätunnus: ")
+    arvaus2 = input("Anna salasana: ")
+    yritykset += 1
+        
+    if arvaus1 == "python" and arvaus2 == "rules":
         print("Tervetuloa!")
-    elif tehdyt1 > 5 and tehdyt2 > 5:
+        break
+    elif yritykset > max_yritykset:
         print("Pääsy evätty")
-        arvaus1 = arvaus2 = False
         break
 

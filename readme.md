@@ -12,6 +12,9 @@ Tein myös Projekti 1. Ohjelmointiprojektitehtävän aloituksen
 Tein tehtävät 1-3
 
 ## Moduuli 5
-Tein tehtävät 1, 2 ja 4
-tehtävä 3 ja 5 ovat kesken ja niissä on hankaluuksia
+Tein tehtävät 1-5
 En ole vielä aloittanut tehtävää 6
+
+## Moduuli 6
+
+## Moduuli 7
