@@ -18,3 +18,9 @@ En ole vielä aloittanut tehtävää 6
 ## Moduuli 6
 
 ## Moduuli 7
+Tein tehtävät 1-6
+
+## Moduuli 8
+Tein tehtävät 1-3
+
+## Moduuli 9
