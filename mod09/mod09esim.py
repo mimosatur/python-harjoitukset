@@ -1,6 +1,6 @@
 
 # Olio-ohjelmointi
-'''
+
 koira1_rotu = "Mastiffi"
 koira1_nimi = "Wuffe"
 koira1_syntymävuosi = 2022
@@ -92,7 +92,7 @@ print(f"1. koiran nimi on {koira.nimi}, rotu {koira.rotu} ja syntymävuosi {koir
 print(f"2. koiran nimi on {koira2.nimi}, rotu on {koira2.rotu} ja syntymävuosi {koira2.syntymävuosi}")
 
 # print(koira) viittaus olioon, ei muuttuja. Ei mitään printattavaa
-'''
+
 
 # palyers = [
 #    {

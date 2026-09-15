@@ -16,6 +16,7 @@ Tein tehtävät 1-5
 En ole vielä aloittanut tehtävää 6
 
 ## Moduuli 6
+Tein tehtävät 1, 2
 
 ## Moduuli 7
 Tein tehtävät 1-6
@@ -24,3 +25,4 @@ Tein tehtävät 1-6
 Tein tehtävät 1-3
 
 ## Moduuli 9
+Tein tehtävät 1-3
