@@ -20,6 +20,7 @@ else:
         elif valinta == "Lopeta":
             print("Lopetit pelin")
         peli_käynnissä = False
+        
 
 
 
