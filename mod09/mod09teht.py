@@ -59,19 +59,16 @@ class Auto:
     
 auto = Auto("ABC-123", 142)
 
-auto.kiihdytä(30)  # tänne kutsutaan tehtävässä olevia lukuja
-auto.kiihdytä(70)
-auto.kiihdytä(50)
-print("Auton nopeus kiihdytyksen jälkeen: ", auto.nopeus)
+auto.kuljettu_matka = 2000
+auto.nopeus = 60
 auto.kulje(1.5)
 print("Kuljettu matka 1.5h jälkeen on:", auto.kuljettu_matka)
-auto.kiihdytä(-200)
-print("Auton nopeus jarrutuksen jälkeen: ", auto.nopeus)
 '''
+
 # Tehtävä 4
 # käytä while looppia pääohjelmassa
 # lista autoille
-
+import random
 
 class Auto:
     def __init__(self, rekisteritunnus, huippunopeus):
@@ -91,16 +88,18 @@ class Auto:
         # self.kuljetty_matka = self.kuljettu_matka + self.nopeus * tuntimäärä
         self.kuljettu_matka += self.nopeus * tuntimäärä
 
-    
-auto = Auto("ABC-123", 142)
-autolista = []
+auto_lista = []
 
-auto.kiihdytä(30)  # tänne kutsutaan tehtävässä olevia lukuja
-auto.kiihdytä(70)
-auto.kiihdytä(50)
-print("Auton nopeus kiihdytyksen jälkeen: ", auto.nopeus)
-auto.kulje(1.5)
-print("Kuljettu matka 1.5h jälkeen on:", auto.kuljettu_matka)
-auto.kiihdytä(-200)
-print("Auton nopeus jarrutuksen jälkeen: ", auto.nopeus)
+for a in range(1, 11):
+    rekisteritunnus = f"ABC-{a}"
+    huippunopeus = random.randint(100,200)
+
+    auto = Auto(rekisteritunnus, huippunopeus)
+    auto_lista.append(auto)
+
+
+
+
+
+
 
