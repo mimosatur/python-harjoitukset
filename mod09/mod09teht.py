@@ -55,7 +55,7 @@ class Auto:
     def kulje(self, tuntimäärä):
         # self.kuljetty_matka = self.kuljettu_matka + self.nopeus * tuntimäärä
         self.kuljettu_matka += self.nopeus * tuntimäärä
-
+'''
     
 auto = Auto("ABC-123", 142)
 
@@ -63,7 +63,7 @@ auto.kuljettu_matka = 2000
 auto.nopeus = 60
 auto.kulje(1.5)
 print("Kuljettu matka 1.5h jälkeen on:", auto.kuljettu_matka)
-'''
+
 
 # Tehtävä 4
 # käytä while looppia pääohjelmassa

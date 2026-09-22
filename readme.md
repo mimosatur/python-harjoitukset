@@ -26,3 +26,8 @@ Tein tehtävät 1-3
 
 ## Moduuli 9
 Tein tehtävät 1-3
+
+## Moduuli 10
+
+## Moduuli 11
+Tein tehtävän 1, tehtävä 2 kesken
