@@ -5,3 +5,8 @@ class Koira:
 
     def hauku(self):
         print(f"{self.nimi} haukkuu: Vuh vuh!")
+
+
+if __name__ == "__main__":      # tällä voidaan testata luokan toimivuutta
+    koira = Koira("TestiRekku", "Labradorin noutaja")
+    koira.hauku()

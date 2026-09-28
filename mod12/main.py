@@ -1,14 +1,12 @@
 from elaimet import Koira, Kissa, Ihminen
+from peli import Pelaaja
 
-koira1 = Koira("Rekku", "Labradori")
-kissa1 = Kissa("Misu", "Musta")
-ihminen1 = Ihminen("Joa", "suomalainen")
+pelaaja1 = Pelaaja(nimimerkki="Glizer", palvelin="Spinshatter")
+pelaaja2 = Pelaaja(nimimerkki="DrGlue", palvelin="Spinshatter")
 
-koira1.hauku()
-kissa1.miau()
-ihminen1.hauku() # [Joa]
+pelaaja1.viestittele("Mis mennää?")
+pelaaja2.viestittele("Kuudes pulli Illidanis meneillää :skull:")
 
 # tiedosto = moduuli
 # kansio = paketti
 
-from peli import Pelaaja
