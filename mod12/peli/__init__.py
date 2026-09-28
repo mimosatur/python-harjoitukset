@@ -1,0 +1,2 @@
+from .pelaaja import Pelaaja
+
