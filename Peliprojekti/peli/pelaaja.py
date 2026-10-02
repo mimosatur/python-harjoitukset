@@ -20,4 +20,7 @@ class Pelaaja:
             print(f"- {esine.nimi}, paino {esine.paino} kg")
 
 
-        
+nimi = input("Anna nimesi: ")
+pelaaja = Pelaaja(nimi, "eteinen")   
+
+print(f"Hei {pelaaja.nimi}") 
