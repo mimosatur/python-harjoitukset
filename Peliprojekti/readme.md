@@ -2,9 +2,9 @@
 **Mimosa Turunen
 
 Kestävän kehityksen tavoite: 
-    nro 15, Maanpäällinen elämä
+    nro 15, Maanpäällinen elämä, selitä auki
 
 Pelin tavoite:
-    Palauttaa metsä ennalleen laittoman hakkuun jälkeen
+    Palauttaa metsä ennalleen ilkeiden olioiden tuhottua metsä
 
 
