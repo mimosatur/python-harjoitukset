@@ -4,7 +4,8 @@ import json
 #valinta = valinta[0].lower()
 
 # luodaan huone
-eteinen = Huone("Eteinen")
+aukio = Huone("Aukio")
+lampi = Huone("Lampi")
 
 # luodaan muutama esine
 esine1 = Esine("Kivi", 0.5)
@@ -50,16 +51,18 @@ else:
         if suunta == "itä":
             # suunnan itä polku
             print("Valitsit suunnan itä")
+            print("--------------")
+            Huone.lisaa_esine(esine1, esine2)
+            Huone.aukio()
+            input("Minne haluat mennä seuraavaksi: ")
 
-            while True:
-                moi = input("Anna komento: ")
-                print(moi)
 
         elif suunta == "pohjoinen":
             print("Valitsit suunnan pohjoinen")
+            
             # suunnan pohjoinen polku
 
-        elif suunta == "länsi":
+        elif suunta == "länsi": # suunnan länsi polku
             print("Valitsit suunnan länsi")
             print("----------")
             Apufunktiot.suunta_lansi()

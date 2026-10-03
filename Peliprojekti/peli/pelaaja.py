@@ -20,7 +20,6 @@ class Pelaaja:
             print(f"- {esine.nimi}, paino {esine.paino} kg")
 
 
-
     def save_game(self):
         print("Tallennetaan peli.")
         try:

@@ -15,5 +15,15 @@ class Huone:
             esine = self.sisalto
             print(f"Esiineen nimi: {esine.nimi}, esineen paino: {self.paino} kg")
 
+    def aukio(self):
+            for esine in range(self.sisalto):
+                esine = self.sisalto
+                print(f"Esiineen nimi: {esine.nimi}, esineen paino: {self.paino} kg")
+                print("Saavuit aukiolle josta on kaadettu kaikki puut")
+                print("Maa on myös myllätty")
+                print("Löydät maasta pussin")
+                print("Sen sisältä löytyy 3 kpl puiden siemeniä")
 
+    def lampi(self):
+        print("Saavuit lammelle")
 
