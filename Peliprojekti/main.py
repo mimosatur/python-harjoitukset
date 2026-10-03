@@ -42,7 +42,7 @@ else:
     
     Apufunktiot.tulosta_paavalikko()
     valinta = int(input("Valitse mitä haluat tehdä: "))
-
+    # haluanko while loopin?
     if valinta == 1: 
         print("Peli aloitettu")
         print("----------")
@@ -51,7 +51,7 @@ else:
             print(intro_file.read())
 
         print("--------------")
-        Huone.aukio()
+        Huone.metsan_reuna("Metsän reuna")
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
         suunta = suunta.lower()
 
@@ -60,7 +60,7 @@ else:
             print("Valitsit suunnan itä")
             print("--------------")
             
-            Huone.aukio()
+            Huone.aukio("Aukio")
             input("Minne haluat mennä seuraavaksi: ")
 
 
@@ -74,12 +74,12 @@ else:
             print("----------")
             Apufunktiot.suunta_lansi()
 
-    elif valinta == 2:
-        # Tästä pitäisi päästä jatkamaan käynnissä olevaa peliä
+    elif valinta == 2:  # Tästä pääsee jatkamaan käynnissä olevaa peliä
+        
         print("Asetukset\n")            
         print()
 
-    elif valinta == 3:
-        # Jos et haluakkaan pelata
+    elif valinta == 3:  # Jos et haluakkaan pelata
+        
         print("Lopetit pelin")
         
