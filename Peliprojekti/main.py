@@ -26,10 +26,11 @@ if ika < 12:
 else:
     print(f"Tervetuloa Aamuruskon lehto peliin!")
     nimi = input("Mikä on pelaajanimesi?: ")
+
     # Tallenna pelaajan tiedot
     # luodaan pelaaja
     pelaaja = Pelaaja(nimi, "eteinen")
-    print(f"Hei {Pelaaja.nimi}!")
+    print(f"Hei {pelaaja.nimi}!")
 
     
     Apufunktiot.tulosta_paavalikko()
@@ -40,9 +41,13 @@ else:
         # Tähän pelin alkuteksti
         Apufunktiot.suunnan_valinta()
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
+        suunta = suunta[0].lower()
         if suunta == "itä":
             # suunnan itä polku
             print("Valitsit suunnan itä")
+            while True:
+                moi = input("Anna komento")
+                print(moi)
         elif suunta == "pohjoinen":
             print("Valitsit suunnan pohjoinen")
             # suunnan pohjoinen polku
