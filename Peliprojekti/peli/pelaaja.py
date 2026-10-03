@@ -19,8 +19,3 @@ class Pelaaja:
         for esine in self.reppu:
             print(f"- {esine.nimi}, paino {esine.paino} kg")
 
-
-nimi = input("Anna nimesi: ")
-pelaaja = Pelaaja(nimi, "eteinen")   
-
-print(f"Hei {pelaaja.nimi}") 
