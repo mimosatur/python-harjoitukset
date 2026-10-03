@@ -16,6 +16,7 @@ class Huone:
             print(f"Esiineen nimi: {esine.nimi}, esineen paino: {self.paino} kg")
 
     def aukio(self):
+            print(f"Huoneen {self.nimi} sisältö: ")
             for esine in range(self.sisalto):
                 esine = self.sisalto
                 print(f"Esiineen nimi: {esine.nimi}, esineen paino: {self.paino} kg")
@@ -26,4 +27,9 @@ class Huone:
 
     def lampi(self):
         print("Saavuit lammelle")
+
+    def metsan_reuna(self):
+        print("Olet saapunut metsän reunalle")
+        print("Edessäsi on kolmen eri polkua: itä, pohjoinen ja länsi")
+        print("Mitä pitkin haluaisit lähteä auttamaan metsän jälleenrakennuksessa?") 
 

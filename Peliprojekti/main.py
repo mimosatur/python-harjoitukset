@@ -3,14 +3,19 @@ from peli import Huone, Pelaaja, Esine, Apufunktiot
 import json
 #valinta = valinta[0].lower()
 
-# luodaan huone
-aukio = Huone("Aukio")
-lampi = Huone("Lampi")
-
-# luodaan muutama esine
+# Luodaan muutama esine
 esine1 = Esine("Kivi", 0.5)
 esine2 = Esine("Oksa", 3.5)
 
+# Luodaan huone
+# Lisää metsän reuna josta alotetaan
+aukio = Huone("Aukio")
+lampi = Huone("Lampi")
+
+
+# Lisätään esineitä huoneisiin
+aukio.lisaa_esine(esine1)
+aukio.lisaa_esine(esine2)
 
 
 
@@ -31,12 +36,13 @@ else:
 
     # Tallenna pelaajan tiedot
     # luodaan pelaaja
-    pelaaja = Pelaaja(nimi, "eteinen")
+    pelaaja = Pelaaja(nimi, aukio)
     print(f"Hei {pelaaja.nimi}!")
 
     
     Apufunktiot.tulosta_paavalikko()
     valinta = int(input("Valitse mitä haluat tehdä: "))
+
     if valinta == 1: 
         print("Peli aloitettu")
         print("----------")
@@ -45,14 +51,15 @@ else:
             print(intro_file.read())
 
         print("--------------")
-        Apufunktiot.suunnan_valinta()
+        Huone.aukio()
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
         suunta = suunta.lower()
+
         if suunta == "itä":
             # suunnan itä polku
             print("Valitsit suunnan itä")
             print("--------------")
-            Huone.lisaa_esine(esine1, esine2)
+            
             Huone.aukio()
             input("Minne haluat mennä seuraavaksi: ")
 

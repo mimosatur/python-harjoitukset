@@ -23,10 +23,6 @@ class Apufunktiot:
         print("3. Lopeta")
         print("--------------")
 
-    def suunnan_valinta():
-        print("Olet saapunut metsän reunalle")
-        print("Edessäsi on kolmen eri polkua: itä, pohjoinen ja länsi")
-        print("Mitä pitkin haluaisit lähteä auttamaan metsän jälleenrakennuksessa?")
 
     def suunta_lansi():
         print("--------------")

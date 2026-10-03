@@ -20,25 +20,3 @@ class Pelaaja:
             print(f"- {esine.nimi}, paino {esine.paino} kg")
 
 
-    def save_game(self):
-        print("Tallennetaan peli.")
-        try:
-            with open("peliprojekti/peli/tallenna.txt", "w") as file:
-                data = {"nimi": self.nimi, "sijainti": self.sijainti}
-                json.dump(data, file)
-        except FileNotFoundError:
-            print("Tiedostoa ei löydy.")
-        except IOError:
-            print("Tiedoston käsittelyssä tapahtui virhe.")
-
-    def load_game(self):
-        try:
-            with open("peliprojekti/peli/tallenna.txt", "r") as file:
-                data = json.load(file)
-                #print("Ladattu tallennusdata:", data)
-                self.nimi = data["nimi"]
-                self.sijainti = data["sijainti"]
-        except FileNotFoundError:
-            print("Tiedostoa ei löydy.")
-        except IOError:
-            print("Tiedoston käsittelyssä tapahtui virhe.")
