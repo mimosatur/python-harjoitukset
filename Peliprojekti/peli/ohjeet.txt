@@ -1,1 +1,4 @@
 Kuinka peliä pelataan:
+
+Liikku eteenpäin syöttämällä pyydetyn komennon.
+Suorita erilaisia tehtäviä palauttaaksesi elämä Aamuruskon lehtoon

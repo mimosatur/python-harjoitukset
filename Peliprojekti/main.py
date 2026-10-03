@@ -1,5 +1,6 @@
 # Tämä on ohjelman päätiedosto
 from peli import Huone, Pelaaja, Esine, Apufunktiot
+import json
 #valinta = valinta[0].lower()
 
 # luodaan huone
@@ -38,26 +39,36 @@ else:
     if valinta == 1: 
         print("Peli aloitettu")
         print("----------")
-        # Tähän pelin alkuteksti
+        # Tässä luetaan pelaajalle pelin esittelyteksti
+        with open("peliprojekti/peli/introteksti.txt") as intro_file:
+            print(intro_file.read())
+
+        print("--------------")
         Apufunktiot.suunnan_valinta()
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
-        suunta = suunta[0].lower()
+        suunta = suunta.lower()
         if suunta == "itä":
             # suunnan itä polku
             print("Valitsit suunnan itä")
+
             while True:
-                moi = input("Anna komento")
+                moi = input("Anna komento: ")
                 print(moi)
+
         elif suunta == "pohjoinen":
             print("Valitsit suunnan pohjoinen")
             # suunnan pohjoinen polku
+
         elif suunta == "länsi":
             print("Valitsit suunnan länsi")
-            # suunnan länsi polku
+            print("----------")
+            Apufunktiot.suunta_lansi()
+
     elif valinta == 2:
         # Tästä pitäisi päästä jatkamaan käynnissä olevaa peliä
         print("Asetukset\n")            
         print()
+
     elif valinta == 3:
         # Jos et haluakkaan pelata
         print("Lopetit pelin")
