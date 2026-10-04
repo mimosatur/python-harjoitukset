@@ -5,7 +5,7 @@ class Esine:
         self.nimi = nimi
         self.paino = float(paino)
 
-    def tulosta_esine(self): # lisää paino
+    def tulosta_esine(self): 
         print(f"{self.nimi} painaa {self.paino} kg.")
 
         

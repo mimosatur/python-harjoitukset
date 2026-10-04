@@ -4,10 +4,10 @@ from peli import Huone, Pelaaja, Esine, Apufunktiot
 import json
 
 # Luodaan muutama esine
-esine1 = Esine("Kivi")
-esine2 = Esine("Oksa")
+esine1 = Esine("Kivi", 1.0)
+esine2 = Esine("Oksa", 1.6)
 
-# Luodaan huone
+# Luodaan huoneet
 metsan_reuna = Huone("Metsän reuna")
 aukio = Huone("Aukio")
 lampi = Huone("Lampi")
@@ -69,7 +69,7 @@ else:
             pelaaja.liikkuu(ita1)
             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
             #pelaaja.sijainti.tulosta_sisalto()
-            pelaaja.keraa_esine()
+            pelaaja.keraa_esine(esine1)
             pelaaja.sijainti.aukio()
 
             print("--------------")
