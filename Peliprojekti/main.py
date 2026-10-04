@@ -1,4 +1,5 @@
 # Tämä on ohjelman päätiedosto
+
 from peli import Huone, Pelaaja, Esine, Apufunktiot
 import json
 #valinta = valinta[0].lower()
@@ -8,7 +9,7 @@ esine1 = Esine("Kivi", 0.5)
 esine2 = Esine("Oksa", 3.5)
 
 # Luodaan huone
-# Lisää metsän reuna josta alotetaan
+metsan_reuna = Huone("Metsän reuna")
 aukio = Huone("Aukio")
 lampi = Huone("Lampi")
 
@@ -17,8 +18,7 @@ lampi = Huone("Lampi")
 aukio.lisaa_esine(esine1)
 aukio.lisaa_esine(esine2)
 
-
-
+huoneet = [metsan_reuna, aukio, lampi]
 
 
 
@@ -36,7 +36,7 @@ else:
 
     # Tallenna pelaajan tiedot
     # luodaan pelaaja
-    pelaaja = Pelaaja(nimi, aukio)
+    pelaaja = Pelaaja(nimi, metsan_reuna)
     print(f"Hei {pelaaja.nimi}!")
 
     
@@ -49,9 +49,10 @@ else:
         # Tässä luetaan pelaajalle pelin esittelyteksti
         with open("peliprojekti/peli/introteksti.txt") as intro_file:
             print(intro_file.read())
-
         print("--------------")
-        Huone.metsan_reuna("Metsän reuna")
+        # tähän ohjeet
+        print(f"Olet nyt: {pelaaja.sijainti.nimi}")
+        pelaaja.sijainti.tulosta_sisalto()
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
         suunta = suunta.lower()
 
@@ -60,7 +61,7 @@ else:
             print("Valitsit suunnan itä")
             print("--------------")
             
-            Huone.aukio("Aukio")
+           
             input("Minne haluat mennä seuraavaksi: ")
 
 

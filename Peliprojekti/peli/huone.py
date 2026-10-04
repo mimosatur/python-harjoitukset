@@ -27,6 +27,7 @@ class Huone:
 
     def lampi(self):
         print("Saavuit lammelle")
+        print("Sen pinnalla kelluu paljon roskia")
 
     def metsan_reuna(self):
         print("Olet saapunut metsän reunalle")
