@@ -43,7 +43,7 @@ class Huone:
     def lampi(self):
         print("Sen pinnalla kelluu paljon roskia")
         # kerää listaan roskia ja kun lista täynnä sano että valmista
-        print("Tehtäväsi")
+        print("Tehtäväsi:")
         print("Kerää kaikki roskat lammesta (4 kpl)")
         print("Syötä komento: kerää ,kerätäksesi roska")
 
