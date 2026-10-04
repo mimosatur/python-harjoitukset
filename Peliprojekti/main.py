@@ -52,17 +52,19 @@ else:
             print(intro_file.read())
         print("--------------")
         # tähän ohjeet
-        print(f"Olet nyt: {pelaaja.sijainti.nimi}")  
+        print(f"Olet saapunut: {pelaaja.sijainti.nimi}")  
         pelaaja.sijainti.metsan_reuna()   
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
-        suunta = suunta.lower()
+        suunta = suunta[0].lower()
 
         if suunta == "itä":
             # suunnan itä polku
+            uusi_huone1 = aukio
+            pelaaja.liikkuu(uusi_huone1)
             print("Valitsit suunnan itä")
             print("--------------")
-            
-           
+            print(f"Olet saapunut: {pelaaja.sijainti.nimi}")
+            pelaaja.sijainti.aukio()
             input("Minne haluat mennä seuraavaksi: ")
 
 

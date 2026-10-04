@@ -8,7 +8,6 @@ class Pelaaja:
 
     def liikkuu(self, huone):
         self.sijainti = huone
-        print(f"Siirryit huoneeseen {huone.nimi}")
 
     def keraa_esine(self, esine):
         self.reppu.append(esine)

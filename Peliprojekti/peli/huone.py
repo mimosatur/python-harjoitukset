@@ -30,7 +30,6 @@ class Huone:
         print("Sen pinnalla kelluu paljon roskia")
 
     def metsan_reuna(self):
-        print("Olet saapunut metsän reunalle")
         print("Edessäsi on kolmen eri polkua: itä, pohjoinen ja länsi")
         print("Mitä pitkin haluaisit lähteä auttamaan metsän jälleenrakennuksessa?") 
 
