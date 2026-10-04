@@ -55,7 +55,7 @@ else:
         print(f"Olet saapunut: {pelaaja.sijainti.nimi}")  
         pelaaja.sijainti.metsan_reuna()   
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
-        suunta = suunta[0].lower()
+        suunta = suunta.lower()
 
         if suunta == "itä":
             # suunnan itä polku
