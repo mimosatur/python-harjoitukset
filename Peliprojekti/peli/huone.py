@@ -4,15 +4,19 @@
 class Huone:
     def __init__(self, nimi):
         self.nimi = nimi
-        self.sisalto = []
+        self.esineet = []
 
     def lisaa_esine(self, esine):
-        self.sisalto.append(esine)
+        self.esineet.append(esine)
 
     def tulosta_sisalto(self):
-        print(f"Huoneen {self.nimi} sisältö: ")
-        for esine in self.sisalto:
-            print(self.tulosta_sisalto) #, esineen paino: {self.paino} kg
+        if len(self.esineet) == 0:
+            print("Huoneessa ei ole enää roskia")
+        else:
+            print(f"Huoneen {self.nimi} sisältö: ")
+            for numero in range(len(self.esineet)):
+                esine = self.esineet[numero]
+                print(f"{numero + 1}. {esine.nimi} ja sen paino: {esine.paino}")
 
     def aukio(self):
             print("Saavuit aukiolle josta on kaadettu kaikki puut")

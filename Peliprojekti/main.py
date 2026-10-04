@@ -4,8 +4,13 @@ from peli import Huone, Pelaaja, Esine, Apufunktiot
 import json
 
 # Luodaan muutama esine
-esine1 = Esine("Kivi", 1.0)
-esine2 = Esine("Oksa", 1.6)
+esine1 = Esine("Maitotölkki", 0.02)
+esine2 = Esine("Karkkipaperi", 0.01)
+esine3 = Esine("Tupakantumppi", 0.015)
+esine4 = Esine("Kertakäyttögrilli", 0.5)
+esine5 = Esine("Limsatölkki", 0.04)
+esine6 = Esine("Muovipussi", 0.02)
+esine7 = Esine("Autonrengas", 3.0)
 
 # Luodaan huoneet
 metsan_reuna = Huone("Metsän reuna")
@@ -15,9 +20,13 @@ portti = Huone("Portti")
 
 
 # Lisätään esineitä huoneisiin
-aukio.lisaa_esine(esine1)
-aukio.lisaa_esine(esine2)
-
+metsan_reuna.lisaa_esine(esine1)
+metsan_reuna.lisaa_esine(esine2)
+metsan_reuna.lisaa_esine(esine3)
+aukio.lisaa_esine(esine4)
+aukio.lisaa_esine(esine5)
+lampi.lisaa_esine(esine6)
+lampi.lisaa_esine(esine7)
 
 
 
@@ -53,9 +62,16 @@ else:
         # tähän ohjeet
         with open("peliprojekti/peli/ohjeet.txt") as ohjeet_file:
             print(ohjeet_file.read())
-            
-        print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")  
+
+        print("--------------")  
+        print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+        pelaaja.sijainti.tulosta_sisalto()
+        pelaaja.keraa_esine(esine1)
+        pelaaja.keraa_esine(esine2)
+        pelaaja.keraa_esine(esine3)
+        print()
         pelaaja.sijainti.metsan_reuna()
+        
         print("--------------")   
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
         suunta = suunta.lower()
@@ -68,10 +84,12 @@ else:
             ita1 = aukio
             pelaaja.liikkuu(ita1)
             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
-            #pelaaja.sijainti.tulosta_sisalto()
-            pelaaja.keraa_esine(esine1)
+            pelaaja.sijainti.tulosta_sisalto()
+            print()
             pelaaja.sijainti.aukio()
-
+            print()
+            pelaaja.keraa_esine(esine4)
+            pelaaja.keraa_esine(esine5)
             print("--------------")
             print("Edessäsi tie haarautuu oikealle ja vasemmalle")
 
@@ -85,7 +103,13 @@ else:
                     print("Valitsit suunnan oikea")
                     print("--------------")
                     print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+                    pelaaja.sijainti.tulosta_sisalto()
+                    print()
                     pelaaja.sijainti.lampi()
+                    print()
+                    pelaaja.keraa_esine(esine6)
+                    pelaaja.keraa_esine(esine7)
+
                     print("--------------")
                     print("Lammen rannalta lähtee polku pohjoiseen")
                     print("seurataksesi polkua syötä: pohjoinen")
@@ -100,6 +124,9 @@ else:
                             print("Valitsit suunnan pohjoinen")
                             print("--------------")
                             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+                            print("Olet kerännyt seuraavat roskat:")
+                            pelaaja.tulosta_repun_sisalto()
+                            print()
                             pelaaja.sijainti.portti()
                             break
                         else:
@@ -141,7 +168,12 @@ else:
                     koillinen = aukio
                     pelaaja.liikkuu(koillinen)
                     print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+                    pelaaja.sijainti.tulosta_sisalto()
+                    print()
                     pelaaja.sijainti.aukio()
+                    print()
+                    pelaaja.keraa_esine(esine4)
+                    pelaaja.keraa_esine(esine5)
                     print("--------------")
                     print("Aukion laidalta lähtee polku länteen")
                     print("Seurataksesi polkua syötä: länsi")                  
