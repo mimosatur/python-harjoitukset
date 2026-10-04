@@ -17,9 +17,6 @@ lampi = Huone("Lampi")
 # Lisätään esineitä huoneisiin
 aukio.lisaa_esine(esine1)
 aukio.lisaa_esine(esine2)
-metsan_reuna.lisaa_esine(esine1)
-
-huoneet = [metsan_reuna, aukio, lampi]
 
 
 
