@@ -11,23 +11,63 @@ class Huone:
 
     def tulosta_sisalto(self):
         print(f"Huoneen {self.nimi} sisältö: ")
-        for esine in range(self.sisalto):
-            esine = self.sisalto
-            print(f"Esiineen nimi: {esine.nimi}, esineen paino: {self.paino} kg")
+        for esine in self.sisalto:
+            print(self.tulosta_sisalto) #, esineen paino: {self.paino} kg
 
     def aukio(self):
-            print(f"Huoneen {self.nimi} sisältö: ")
-            for esine in range(self.sisalto):
-                esine = self.sisalto
-                print(f"Esiineen nimi: {esine.nimi}, esineen paino: {self.paino} kg")
-                print("Saavuit aukiolle josta on kaadettu kaikki puut")
-                print("Maa on myös myllätty")
-                print("Löydät maasta pussin")
-                print("Sen sisältä löytyy 3 kpl puiden siemeniä")
+            print("Saavuit aukiolle josta on kaadettu kaikki puut")
+            print("Maa on myös myllätty")
+            print("----------")
+            print("Näet aukean laidalla ilkeitä olioita kaatamassa puita")
+            print("Tehtävänäsi on saada heidät lopettamaan puiden kaato")
+            print("Lähestyt ilkeitä olioita ja sanot:\nHei, teidän pitää lopettaa puiden kaataminen!")
+            print("Ilkeät oliot: 'Suostumme lopettamaan puiden kaatamisen jos arvaat oikein arvoituksemme'\n")
+            print("----------")
+            print("~~ Mikä menee ylös ja alas, mutta ei liiku yhtään? ~~")
+            print("Vastaus vaihtoehdot:\nA Pilvi\nB Portaat\nC Tie")
+            valinta = input("Anna vastauksesi: ")
+            valinta = valinta.upper()
+
+            while True:
+
+                if valinta != "B":
+                    valinta = input("Vastasit väärin.\nYritä uudelleen: ")
+                    valinta = valinta.upper()
+                elif valinta == "B":
+                    print("Hienoa, arvasit oikein!")
+                    print("Ilkeät oliot nyökkäävät hyväksymisen merkiksi, nousevat koneisiinsa ja ajavat pois")
+                break
+
+            return
 
     def lampi(self):
-        print("Saavuit lammelle")
         print("Sen pinnalla kelluu paljon roskia")
+        # kerää listaan roskia ja kun lista täynnä sano että valmista
+        print("Tehtäväsi")
+        print("Kerää kaikki roskat lammesta (4 kpl)")
+        print("Syötä komento: kerää ,kerätäksesi roska")
+
+        roskat = []
+
+        while len(roskat) < 4:
+            
+            komento = str(input("Anna komento> "))
+            komento = komento.lower() # atm hyväksyy kaikki sanat 
+            roskat.append(komento)
+                       
+            if len(roskat) == 4:
+                print("Hienoa keräsit kaikki roskat")
+                break
+
+        return
+
+    def portti(self):
+        print("Sinua vastaan kävelee metsänhoitaja")
+        print("Hän pysähtyy kohdallesi ja sanoo:")
+        print("Hienoa, olet suorittanut kaikki tehtävät.")
+        print("Kiitos avustasi Aamuruskon lehdon korjauksessa")
+        print("Peli loppui :)")
+
 
     def metsan_reuna(self):
         print("Edessäsi on kolmen eri polkua: itä, pohjoinen ja länsi")

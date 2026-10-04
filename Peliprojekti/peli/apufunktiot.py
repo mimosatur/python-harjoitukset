@@ -9,6 +9,8 @@ class Apufunktiot:
         print("3. Lopeta")
         print("--------------")
 
+    def virhe():
+        print("Virheellinen valinta. Yritä uudelleen.")
 
     def suunta_lansi():
         print("--------------")
@@ -20,8 +22,9 @@ class Apufunktiot:
         print("Vasemmalla näkyy iso kivenlohkare")
         print("Kumpaan suuntaan haluat mennä?")
         mene = input("Anna komento> ")
-        print(f"Valitsit suunnan {mene}")
+        
         if mene == "oikea":
+            print(f"Valitsit suunnan {mene}")
             print("--------------")
             print("Kirstu on tehty tummasta puusta") 
             print("ja siinä on metalliset yksityiskohdat")
@@ -49,11 +52,13 @@ class Apufunktiot:
                     print("Virheellinen vastaus. Yritä uudelleen.")
 
         elif mene == "vasen":
+            print(f"Valitsit suunnan {mene}")
             print("--------------")
             print("Kivenlohkare on sammaleen peittämä")
             print("Sen takaa kuuluu outoa muminaa")
             print("Kurkistaaksesi lohkareen taakse syötä: kurkista")
-            input("Anna komento> ")
+            komento = input("Anna komento> ")
+            # while?
             print("--------------")
             print("Lohkareen takaa paljastuu kolme ikeää oliota jotka kääntävät katseensa sinuun")
             print("He hymyilevät ja sanovat: 'Ai katsos sieltä saapui pikkuinen ihminen'")

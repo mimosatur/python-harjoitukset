@@ -16,6 +16,6 @@ class Pelaaja:
     def tulosta_repun_sisalto(self):
         print("Repun sisältö: ")
         for esine in self.reppu:
-            print(f"- {esine.nimi}, paino {esine.paino} kg")
+            print(f"- {esine.nimi}, paino {esine.paino} kg") #, paino {esine.paino} kg
 
 
