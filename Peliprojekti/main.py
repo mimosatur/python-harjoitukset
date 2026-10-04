@@ -40,7 +40,7 @@ else:
     
     Apufunktiot.tulosta_paavalikko()
     valinta = int(input("Valitse mitä haluat tehdä: "))
-    # haluanko while loopin?
+    
     if valinta == 1: 
 
         print("Peli aloitettu")
@@ -51,6 +51,9 @@ else:
         print("--------------")
 
         # tähän ohjeet
+        with open("peliprojekti/peli/ohjeetr.txt") as ohjeet_file:
+            print(ohjeet_file.read())
+            
         print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")  
         pelaaja.sijainti.metsan_reuna()   
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
@@ -152,8 +155,10 @@ else:
                             pelaaja.liikkuu(lansi2)
                             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
                             pelaaja.sijainti.portti()
+                            break
                         else:
                             Apufunktiot.virhe() 
+                    break
 
                 else:
                     Apufunktiot.virhe()
