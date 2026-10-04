@@ -50,5 +50,13 @@ else:
     print(f"Hei {pelaaja.nimi}!")
 
     # Tässä on pelin esittelyteksti
-    with open("uusi/peli/introteksti.txt") as intro_file:
+    with open("uusi/peli/intro.txt") as intro_file:
         print(intro_file.read())
+
+    # Tässä luetaan pelaajalle pelin ohjeet
+
+    print(f"Aloitat pelin metsänosasta: {pelaaja.sijainti.nimi}") 
+
+    peli_kaynnissa = True
+
+    while peli_kaynnissa:
