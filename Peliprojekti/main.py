@@ -51,11 +51,12 @@ else:
         print("--------------")
 
         # tähän ohjeet
-        with open("peliprojekti/peli/ohjeetr.txt") as ohjeet_file:
+        with open("peliprojekti/peli/ohjeet.txt") as ohjeet_file:
             print(ohjeet_file.read())
             
         print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")  
-        pelaaja.sijainti.metsan_reuna()   
+        pelaaja.sijainti.metsan_reuna()
+        print("--------------")   
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
         suunta = suunta.lower()
 
@@ -68,6 +69,7 @@ else:
             pelaaja.liikkuu(ita1)
             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
             #pelaaja.sijainti.tulosta_sisalto()
+            pelaaja.keraa_esine()
             pelaaja.sijainti.aukio()
 
             print("--------------")
@@ -173,7 +175,7 @@ else:
 
     elif valinta == 2:  # Tästä pääsee jatkamaan käynnissä olevaa peliä
         
-        print("Asetukset\n")            
+        print("Jatketaan peliä")            
         print()
 
     elif valinta == 3:  # Jos et haluakkaan pelata
