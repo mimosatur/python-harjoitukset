@@ -17,6 +17,7 @@ lampi = Huone("Lampi")
 # Lisätään esineitä huoneisiin
 aukio.lisaa_esine(esine1)
 aukio.lisaa_esine(esine2)
+metsan_reuna.lisaa_esine(esine1)
 
 huoneet = [metsan_reuna, aukio, lampi]
 
@@ -51,8 +52,8 @@ else:
             print(intro_file.read())
         print("--------------")
         # tähän ohjeet
-        print(f"Olet nyt: {pelaaja.sijainti.nimi}")
-        pelaaja.sijainti.tulosta_sisalto()
+        print(f"Olet nyt: {pelaaja.sijainti.nimi}")  
+        pelaaja.sijainti.metsan_reuna()   
         suunta = input("Valitse mihin suuntaan haluat mennä: ")
         suunta = suunta.lower()
 
@@ -65,10 +66,9 @@ else:
             input("Minne haluat mennä seuraavaksi: ")
 
 
-        elif suunta == "pohjoinen":
+        elif suunta == "pohjoinen": # suunnan pohjoinen polku
             print("Valitsit suunnan pohjoinen")
             
-            # suunnan pohjoinen polku
 
         elif suunta == "länsi": # suunnan länsi polku
             print("Valitsit suunnan länsi")
