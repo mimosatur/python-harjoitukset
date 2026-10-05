@@ -17,6 +17,9 @@ aukio = Huone("Aukio")
 lampi = Huone("Lampi")
 portti = Huone("Portti")
 
+# Luodaan lista huoneista
+huoneet = [metsan_reuna, aukio, lampi, portti]
+
 # Lisätään esineet huoneisiin
 metsan_reuna.lisaa_esine(esine1)
 metsan_reuna.lisaa_esine(esine2)
@@ -42,6 +45,7 @@ else:
     # luodaan pelaaja
     pelaaja = Pelaaja(nimi, metsan_reuna)
     print(f"Hei {pelaaja.nimi}!")
+    Pelaaja.tallenna_peli(pelaaja)
 
     
     Apufunktiot.tulosta_paavalikko()
@@ -246,7 +250,8 @@ else:
 
     elif valinta == 2:  # Tästä pääsee jatkamaan käynnissä olevaa peliä
         
-        print("Jatketaan peliä")  # En saanut tallennusta toimimaan joten sitä ei nyt ole tässä          
+        print("Jatketaan peliä")  # En saanut tallennusta toimimaan joten sitä ei nyt ole tässä
+
         print()
 
     elif valinta == 3:  # Jos et haluakkaan pelata

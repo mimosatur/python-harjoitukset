@@ -1,4 +1,4 @@
-
+import json
 class Pelaaja:
 
     def __init__(self, nimi, sijainti):
@@ -22,4 +22,28 @@ class Pelaaja:
             for esine in self.reppu:
                 print(f"- {esine.nimi}")
 
+
+    def tallenna_peli(self):
+        print("Tallennetaan peli.")
+        try:
+            with open("peliprojekti/peli/save.txt", "w") as file:
+                data = {"nimi": self.nimi, "sijainti": self.sijainti.nimi, "esineet": self.reppu}
+                json.dump(data, file)
+        except FileNotFoundError:
+            print("Tiedostoa ei löydy.")
+        except IOError:
+            print("Tiedoston käsittelyssä tapahtui virhe.")
+
+
+    def lataa_peli(self):
+        try:
+            with open("peliprojekti/peli/save.txt", "r") as file:
+                data = json.load(file)
+                self.nimi = data["nimi"]
+                self.sijainti = data["sijainti"]
+                print("Ladattu tallennus data: ")
+        except FileNotFoundError:
+            print("Tiedostoa ei löydy.")
+        except IOError:
+            print("Tiedoston käsittelyssä tapahtui virhe.")
 

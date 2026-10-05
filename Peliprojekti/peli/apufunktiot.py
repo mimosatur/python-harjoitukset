@@ -73,6 +73,7 @@ class Apufunktiot:
                         print("elämän aamuruskon lehtoon!")
                         print("Peli loppui :)")
                         break
+                break
 
             elif mene == "V":
                 print(f"Valitsit suunnan vasen")
@@ -99,6 +100,8 @@ class Apufunktiot:
 
                     else:
                         Apufunktiot.virhe()
+
+                break
 
             else:
                 Apufunktiot.virhe()
