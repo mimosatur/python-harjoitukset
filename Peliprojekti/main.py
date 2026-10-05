@@ -1,25 +1,23 @@
 # Tämä on ohjelman päätiedosto
-
 from peli import Huone, Pelaaja, Esine, Apufunktiot
 import json
 
-# Luodaan muutama esine
-esine1 = Esine("Maitotölkki", 0.02)
-esine2 = Esine("Karkkipaperi", 0.01)
-esine3 = Esine("Tupakantumppi", 0.015)
-esine4 = Esine("Kertakäyttögrilli", 0.5)
-esine5 = Esine("Limsatölkki", 0.04)
-esine6 = Esine("Muovipussi", 0.02)
-esine7 = Esine("Autonrengas", 3.0)
+# Luodaan tarvittavat esineet
+esine1 = Esine("Maitotölkki")
+esine2 = Esine("Karkkipaperi")
+esine3 = Esine("Tupakantumppi")
+esine4 = Esine("Kertakäyttögrilli")
+esine5 = Esine("Limsatölkki")
+esine6 = Esine("Muovipussi")
+esine7 = Esine("Autonrengas")
 
 # Luodaan huoneet
-metsan_reuna = Huone("Metsän reuna")
+metsan_reuna = Huone("Metsänreuna")
 aukio = Huone("Aukio")
 lampi = Huone("Lampi")
 portti = Huone("Portti")
 
-
-# Lisätään esineitä huoneisiin
+# Lisätään esineet huoneisiin
 metsan_reuna.lisaa_esine(esine1)
 metsan_reuna.lisaa_esine(esine2)
 metsan_reuna.lisaa_esine(esine3)
@@ -41,7 +39,6 @@ else:
     print(f"Tervetuloa Aamuruskon lehto peliin!")
     nimi = input("Mikä on pelaajanimesi?: ")
 
-    # Tallenna pelaajan tiedot
     # luodaan pelaaja
     pelaaja = Pelaaja(nimi, metsan_reuna)
     print(f"Hei {pelaaja.nimi}!")
@@ -59,35 +56,54 @@ else:
             print(intro_file.read())
         print("--------------")
 
-        # tähän ohjeet
+        # Tässä tulostetaan pelin ohjeet
         with open("peliprojekti/peli/ohjeet.txt") as ohjeet_file:
             print(ohjeet_file.read())
 
         print("--------------")  
         print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
-        pelaaja.sijainti.tulosta_sisalto()
-        pelaaja.keraa_esine(esine1)
-        pelaaja.keraa_esine(esine2)
-        pelaaja.keraa_esine(esine3)
-        print()
-        pelaaja.sijainti.metsan_reuna()
-        
-        print("--------------")   
-        suunta = input("Valitse mihin suuntaan haluat mennä: ")
-        suunta = suunta.lower()
+        print("--------------")
+        print("Kerää metsänreunassa olevat roskat")
 
-        if suunta == "itä":
-            # suunnan itä polku
+        while True:
+
+            keraa1 = Apufunktiot.keraa_roska(pelaaja.sijainti)
+            if keraa1 is not None:
+                pelaaja.keraa_esine(keraa1)
+            print()
+
+            keraa2 = Apufunktiot.keraa_roska(pelaaja.sijainti)
+            if keraa2 is not None:
+                pelaaja.keraa_esine(keraa2)
+            print()
+
+            keraa3 = Apufunktiot.keraa_roska(pelaaja.sijainti)
+            if keraa3 is not None:
+                pelaaja.keraa_esine(keraa3)
+
+            if len(pelaaja.sijainti.esineet) == 0:
+                break 
+        print()
+        pelaaja.tulosta_repun_sisalto()
+        print("--------------")
+        pelaaja.sijainti.metsan_reuna()
+        print("--------------")   
+        suunta = input("Valitse mihin suuntaan haluat mennä (L, P vai I): ")
+        suunta = suunta.upper()
+
+        if suunta == "I": # suunnan itä polku
             print("Valitsit suunnan itä")
             print("--------------")
 
             ita1 = aukio
             pelaaja.liikkuu(ita1)
             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+            print("--------------")
             pelaaja.sijainti.tulosta_sisalto()
             print()
             pelaaja.sijainti.aukio()
             print()
+            print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat: ")
             pelaaja.keraa_esine(esine4)
             pelaaja.keraa_esine(esine5)
             print("--------------")
@@ -95,28 +111,32 @@ else:
 
             while True:
 
-                suunta1 = input("Valitse kumpaan suuntaan haluat mennä (o vai v): ")
+                suunta1 = input("Valitse kumpaan suuntaan haluat mennä (O vai V): ")
+                suunta1 = suunta1.upper()
             
-                if suunta1 == "o":
-                    uusi_huone2 = lampi
-                    pelaaja.liikkuu(uusi_huone2)
+                if suunta1 == "O":
                     print("Valitsit suunnan oikea")
                     print("--------------")
+                    uusi_huone2 = lampi
+                    pelaaja.liikkuu(uusi_huone2)
                     print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+
                     pelaaja.sijainti.tulosta_sisalto()
-                    print()
+                    print("--------------")
                     pelaaja.sijainti.lampi()
-                    print()
+                    print("--------------")
+                    print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat: ")
                     pelaaja.keraa_esine(esine6)
                     pelaaja.keraa_esine(esine7)
-
                     print("--------------")
+
                     print("Lammen rannalta lähtee polku pohjoiseen")
                     print("seurataksesi polkua syötä: pohjoinen")
 
                     while True:
 
                         seuraa = input("Anna komento: ")
+                        seuraa = seuraa.lower()
 
                         if seuraa == "pohjoinen":
                             suunta2 = portti
@@ -124,36 +144,49 @@ else:
                             print("Valitsit suunnan pohjoinen")
                             print("--------------")
                             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
-                            print("Olet kerännyt seuraavat roskat:")
-                            pelaaja.tulosta_repun_sisalto()
-                            print()
+                            print("--------------")
                             pelaaja.sijainti.portti()
+                            print("Olet kerännyt seuraavat tavarat:")
+                            pelaaja.tulosta_repun_sisalto()
+                            print("Peli loppui :)")                            
                             break
                         else:
                             Apufunktiot.virhe()
-                        break
+                        
                     break
 
-                elif suunta1 == "v":
+                elif suunta1 == "V":
                     print("Valitsit suunnan vasen")
                     print("--------------")
                     suunta3 = portti
                     pelaaja.liikkuu(suunta3)
                     print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
                     pelaaja.sijainti.portti()
+                    print("--------------")
+                    print("Pelissä keräämäsi tavarat:")
+                    pelaaja.tulosta_repun_sisalto()
+                    print("Peli loppui :)")
 
                     break
+
                 else:
                     Apufunktiot.virhe()
 
 
-        elif suunta == "pohjoinen": # suunnan pohjoinen polku
+        elif suunta == "P": # suunnan pohjoinen polku
             print("Valitsit suunnan pohjoinen")
             print("--------------")
             pohjoinen1 = lampi
             pelaaja.liikkuu(pohjoinen1)
             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
+            print("--------------")
+            pelaaja.sijainti.tulosta_sisalto()
+            print("--------------")
             pelaaja.sijainti.lampi()
+            print("--------------")
+            print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat: ")
+            pelaaja.keraa_esine(esine6)
+            pelaaja.keraa_esine(esine7)
             print("--------------")
             print("Lammen reunalta lähtee tie koilliseen")
             print("Seurataksesi tietä syötä: koillinen")
@@ -161,6 +194,7 @@ else:
             while True:
 
                 pohjoinen2 = input("Anna komento: ")
+                pohjoinen2 = pohjoinen2.lower()
 
                 if pohjoinen2 == "koillinen":
                     print("Valitsit suunnan koillinen")
@@ -169,14 +203,16 @@ else:
                     pelaaja.liikkuu(koillinen)
                     print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
                     pelaaja.sijainti.tulosta_sisalto()
-                    print()
+                    print("--------------")
                     pelaaja.sijainti.aukio()
-                    print()
+                    print("--------------")
+                    print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat:")
                     pelaaja.keraa_esine(esine4)
                     pelaaja.keraa_esine(esine5)
                     print("--------------")
                     print("Aukion laidalta lähtee polku länteen")
-                    print("Seurataksesi polkua syötä: länsi")                  
+                    print("Seurataksesi polkua syötä: länsi")
+                 
 
                     while True:
 
@@ -189,6 +225,9 @@ else:
                             pelaaja.liikkuu(lansi2)
                             print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
                             pelaaja.sijainti.portti()
+                            print("Olet kerännyt seuraavat tavarat:")
+                            pelaaja.tulosta_repun_sisalto()
+                            print("Peli loppui :)")
                             break
                         else:
                             Apufunktiot.virhe() 
@@ -198,7 +237,7 @@ else:
                     Apufunktiot.virhe()
             
 
-        elif suunta == "länsi": # suunnan länsi polku
+        elif suunta == "L": # suunnan länsi polku
 
             print("Valitsit suunnan länsi")
             print("----------")
@@ -207,7 +246,7 @@ else:
 
     elif valinta == 2:  # Tästä pääsee jatkamaan käynnissä olevaa peliä
         
-        print("Jatketaan peliä")            
+        print("Jatketaan peliä")  # En saanut tallennusta toimimaan joten sitä ei nyt ole tässä          
         print()
 
     elif valinta == 3:  # Jos et haluakkaan pelata

@@ -6,18 +6,21 @@ class Huone:
         self.nimi = nimi
         self.esineet = []
 
+    # Lisää luodun esineen huoneeseen
     def lisaa_esine(self, esine):
         self.esineet.append(esine)
 
+    # Tulostaa huoneen sisällön
     def tulosta_sisalto(self):
         if len(self.esineet) == 0:
             print("Huoneessa ei ole enää roskia")
         else:
-            print(f"Huoneen {self.nimi} sisältö: ")
+            print(f"Paikan {self.nimi} sisältö: ")
             for numero in range(len(self.esineet)):
                 esine = self.esineet[numero]
-                print(f"{numero + 1}. {esine.nimi} ja sen paino: {esine.paino}")
+                print(f"{numero + 1}. {esine.nimi}")
 
+    # Tehtävä aukio
     def aukio(self):
             print("Saavuit aukiolle josta on kaadettu kaikki puut")
             print("Maa on myös myllätty")
@@ -44,12 +47,13 @@ class Huone:
 
             return
 
+    # Tehtävä lampi
     def lampi(self):
         print("Sen pinnalla kelluu paljon roskia")
         # kerää listaan roskia ja kun lista täynnä sano että valmista
         print("Tehtäväsi:")
         print("Kerää kaikki roskat lammesta (4 kpl)")
-        print("Syötä komento: kerää ,kerätäksesi roska")
+        print("Kerätäksesi roska syötä komento: kerää")
 
         roskat = []
 
@@ -57,22 +61,26 @@ class Huone:
             
             komento = str(input("Anna komento> "))
             komento = komento.lower() # atm hyväksyy kaikki sanat 
-            roskat.append(komento)
+            if komento == "kerää":
+                roskat.append(komento)
+
+            elif komento != "kerää":
+                print("Virheellinen komento.")
                        
-            if len(roskat) == 4:
+            elif len(roskat) == 4:
                 print("Hienoa keräsit kaikki roskat")
                 break
 
         return
 
+    # Lopetus teksti
     def portti(self):
         print("Sinua vastaan kävelee metsänhoitaja")
         print("Hän pysähtyy kohdallesi ja sanoo:")
         print("Hienoa, olet suorittanut kaikki tehtävät.")
-        print("Kiitos avustasi Aamuruskon lehdon korjauksessa")
-        print("Peli loppui :)")
+        print("Kiitos avustasi Aamuruskon lehdon entisöinnissä!")
 
-
+    # Ensimmäisen suunnan valinta
     def metsan_reuna(self):
         print("Edessäsi on kolmen eri polkua: itä, pohjoinen ja länsi")
         print("Mitä pitkin haluaisit lähteä auttamaan metsän jälleenrakennuksessa?") 
