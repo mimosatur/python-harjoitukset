@@ -63,7 +63,7 @@ else:
         # Tässä tulostetaan pelin ohjeet
         with open("peliprojekti/peli/ohjeet.txt") as ohjeet_file:
             print(ohjeet_file.read())
-
+        Pelaaja.tallenna_peli(pelaaja)
         print("--------------")  
         print(f"Olet saapunut paikkaan: {pelaaja.sijainti.nimi}")
         print("--------------")
@@ -87,11 +87,13 @@ else:
 
             if len(pelaaja.sijainti.esineet) == 0:
                 break 
+        Pelaaja.tallenna_peli(pelaaja)
         print()
         pelaaja.tulosta_repun_sisalto()
         print("--------------")
         pelaaja.sijainti.metsan_reuna()
-        print("--------------")   
+        print("--------------")
+        Pelaaja.tallenna_peli(pelaaja)   
         suunta = input("Valitse mihin suuntaan haluat mennä (L, P vai I): ")
         suunta = suunta.upper()
 
@@ -110,6 +112,7 @@ else:
             print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat: ")
             pelaaja.keraa_esine(esine4)
             pelaaja.keraa_esine(esine5)
+            Pelaaja.tallenna_peli(pelaaja)
             print("--------------")
             print("Edessäsi tie haarautuu oikealle ja vasemmalle")
 
@@ -132,6 +135,7 @@ else:
                     print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat: ")
                     pelaaja.keraa_esine(esine6)
                     pelaaja.keraa_esine(esine7)
+                    Pelaaja.tallenna_peli(pelaaja)
                     print("--------------")
 
                     print("Lammen rannalta lähtee polku pohjoiseen")
@@ -152,7 +156,8 @@ else:
                             pelaaja.sijainti.portti()
                             print("Olet kerännyt seuraavat tavarat:")
                             pelaaja.tulosta_repun_sisalto()
-                            print("Peli loppui :)")                            
+                            print("Peli loppui :)")
+                            Pelaaja.tallenna_peli(pelaaja)                            
                             break
                         else:
                             Apufunktiot.virhe()
@@ -170,7 +175,7 @@ else:
                     print("Pelissä keräämäsi tavarat:")
                     pelaaja.tulosta_repun_sisalto()
                     print("Peli loppui :)")
-
+                    Pelaaja.tallenna_peli(pelaaja)
                     break
 
                 else:
@@ -191,6 +196,7 @@ else:
             print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat: ")
             pelaaja.keraa_esine(esine6)
             pelaaja.keraa_esine(esine7)
+            Pelaaja.tallenna_peli(pelaaja)
             print("--------------")
             print("Lammen reunalta lähtee tie koilliseen")
             print("Seurataksesi tietä syötä: koillinen")
@@ -213,6 +219,7 @@ else:
                     print("Tehtävän suorittamisesta ansaitsit seuraavat tavarat:")
                     pelaaja.keraa_esine(esine4)
                     pelaaja.keraa_esine(esine5)
+                    Pelaaja.tallenna_peli(pelaaja)
                     print("--------------")
                     print("Aukion laidalta lähtee polku länteen")
                     print("Seurataksesi polkua syötä: länsi")
@@ -232,6 +239,7 @@ else:
                             print("Olet kerännyt seuraavat tavarat:")
                             pelaaja.tulosta_repun_sisalto()
                             print("Peli loppui :)")
+                            Pelaaja.tallenna_peli(pelaaja)
                             break
                         else:
                             Apufunktiot.virhe() 
@@ -247,11 +255,12 @@ else:
             print("----------")
 
             Apufunktiot.suunta_lansi()
+            Pelaaja.tallenna_peli(pelaaja)
 
     elif valinta == 2:  # Tästä pääsee jatkamaan käynnissä olevaa peliä
         
-        print("Jatketaan peliä")  # En saanut tallennusta toimimaan joten sitä ei nyt ole tässä
-
+        print("Jatketaan peliä")  # En saanut pelin latausta kunnolla toimimaan
+        Pelaaja.lataa_peli(pelaaja)
         print()
 
     elif valinta == 3:  # Jos et haluakkaan pelata

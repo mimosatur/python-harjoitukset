@@ -27,7 +27,7 @@ class Pelaaja:
         print("Tallennetaan peli.")
         try:
             with open("peliprojekti/peli/save.txt", "w") as file:
-                data = {"nimi": self.nimi, "sijainti": self.sijainti.nimi, "esineet": self.reppu}
+                data = {"nimi": self.nimi, "sijainti": self.sijainti.nimi, "esineet": [esine.nimi for esine in self.reppu]}
                 json.dump(data, file)
         except FileNotFoundError:
             print("Tiedostoa ei löydy.")
@@ -36,12 +36,18 @@ class Pelaaja:
 
 
     def lataa_peli(self):
+        print("Ladataan peli")
         try:
             with open("peliprojekti/peli/save.txt", "r") as file:
                 data = json.load(file)
-                self.nimi = data["nimi"]
-                self.sijainti = data["sijainti"]
-                print("Ladattu tallennus data: ")
+
+            print("Tallennus löytyi!")
+            print(data)
+            self.nimi = data["nimi"]
+            self.sijainti = data["sijainti"]
+            self.reppu = data["esineet"]
+
+
         except FileNotFoundError:
             print("Tiedostoa ei löydy.")
         except IOError:
