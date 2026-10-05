@@ -73,9 +73,6 @@ class Apufunktiot:
                         print("elämän aamuruskon lehtoon!")
                         print("Peli loppui :)")
                         break
-                    else:
-                        Apufunktiot.virhe()
-                        break
 
             elif mene == "V":
                 print(f"Valitsit suunnan vasen")
@@ -98,14 +95,14 @@ class Apufunktiot:
                         print("Koitat juosta karkuun, mutta ilkeät oliot saavat sinut kiinii")
                         print("Ja syövät sinut")
                         print("Peli loppui :(")
+                        break
 
                     else:
                         Apufunktiot.virhe()
-                        break
 
             else:
                 Apufunktiot.virhe()
-                break
+                
 
         
 
