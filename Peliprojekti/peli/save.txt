@@ -1,1 +1,1 @@
-{"nimi": "hde", "sijainti": "Portti", "esineet": ["Maitot\u00f6lkki", "Karkkipaperi", "Tupakantumppi", "Kertak\u00e4ytt\u00f6grilli", "Limsat\u00f6lkki", "Muovipussi", "Autonrengas"]}
+{"nimi": "koi", "sijainti": "Portti", "esineet": ["Maitot\u00f6lkki", "Karkkipaperi", "Tupakantumppi", "Muovipussi", "Autonrengas", "Kertak\u00e4ytt\u00f6grilli", "Limsat\u00f6lkki"]}
